@@ -6,3 +6,7 @@ ollama
 requests
 python-multipart
 pydantic
+pymupdf
+dotenv
+langchain
+lxml

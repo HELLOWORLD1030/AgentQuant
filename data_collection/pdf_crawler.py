@@ -1,9 +1,9 @@
 import os
 import requests
-from bs4 import BeautifulSoup
-from urllib.parse import urljoin
 import time
 import random
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from config import Config
 
 

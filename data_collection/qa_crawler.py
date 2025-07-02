@@ -4,8 +4,9 @@ import json
 import time
 import random
 from bs4 import BeautifulSoup
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from config import Config
-from lxml import html
 
 class QACrawler:
     def __init__(self):

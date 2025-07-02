@@ -7,7 +7,8 @@ channels:
 dependencies:
   - python=3.12
   - pytorch=2.7
-  - cudatoolkit=11.8  # 如果使用 GPU
+  - cudatoolkit=11.8
+  - pytorch::faiss-gpu
   - pip
   - pip:
-      - -r requirements.txt  # 安装所有 pip 依赖
+      - -r requirements.txt

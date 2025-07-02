@@ -181,6 +181,5 @@ class QuantAnalysisSystem:
 
 
 if __name__ == "__main__":
-    # 实例化并运行系统
     analysis_system = QuantAnalysisSystem()
     analysis_system.run()
