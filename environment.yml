@@ -1,0 +1,13 @@
+# environment.yml
+name: quantAgent
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - pytorch=2.7
+  - cudatoolkit=11.8  # 如果使用 GPU
+  - pip
+  - pip:
+      - -r requirements.txt  # 安装所有 pip 依赖

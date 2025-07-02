@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+agentscope
+ollama
+requests
+python-multipart
+pydantic
