@@ -19,3 +19,11 @@
 ```shell
 curl -fsSL https://ollama.com/install.sh | sh
 ```
+#### 代码
+```shell
+git clone https://github.com/HELLOWORLD1030/AgentQuant
+cd AgentQuant
+conda env create -f environment.yml
+conda activate quantAgent
+python main.py
+```
