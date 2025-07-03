@@ -23,20 +23,20 @@ class QuantAnalysisSystem:
         3. 核心处理代理
         """
         #检查数据是否存在，不存在则调用下载逻辑
-        if not os.path.exists(Config.DATA_DIR):
-            print("未检测到数据文件，正在启动数据下载")
+        if not os.path.exists(Config.DATA_DIR) or len(os.listdir(Config.DATA_DIR)) == 0:
+            print("未检测到数据文件或数据文件夹为空，正在启动数据下载")
             from data_collection import QACrawler, PDFCrawler
             qa_crawler = QACrawler()
             qa_crawler.run(max_pages=20)
             pdf_crawler = PDFCrawler()
             pdf_crawler.run(max_count=150)
-        elif not os.path.exists(Config.PDF_DIR):
-            print("未检测到PDF文件，正在启动数据下载")
-            from data_collection import QACrawler, PDFCrawler
+        elif not os.path.exists(Config.PDF_DIR) or len(os.listdir(Config.PDF_DIR)) == 0:
+            print("未检测到PDF文件或PDF文件夹为空，正在启动数据下载")
+            from data_collection import PDFCrawler
             pdf_crawler = PDFCrawler()
             pdf_crawler.run(max_count=150)
-        elif not os.path.exists(Config.JSON_DIR):
-            print("未检测到JSON文件，正在启动数据下载")
+        elif not os.path.exists(Config.JSON_DIR) or len(os.listdir(Config.JSON_DIR)) == 0:
+            print("未检测到JSON文件或JSON文件夹为空，正在启动数据下载")
             from data_collection import QACrawler
             qa_crawler = QACrawler()
             qa_crawler.run(max_pages=20)

@@ -6,7 +6,6 @@ from pathlib import Path
 # 加载环境变量
 load_dotenv()
 
-# 获取项目根目录路径
 
 
 
@@ -33,7 +32,5 @@ class Config:
     API_PORT = int(os.getenv("API_PORT", 8000))
     # CORS 配置
     CORS_ORIGINS = os.getenv("CORS_ORIGINS", "*").split(",")
-    # 数据更新配置
-    DATA_UPDATE_INTERVAL = int(os.getenv("DATA_UPDATE_INTERVAL", 1440))
 
 

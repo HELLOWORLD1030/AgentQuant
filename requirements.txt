@@ -11,3 +11,4 @@ dotenv
 langchain
 lxml
 tqdm
+bs4

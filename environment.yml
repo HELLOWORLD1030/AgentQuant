@@ -6,8 +6,6 @@ channels:
   - defaults
 dependencies:
   - python=3.12
-  - pytorch=2.7
-  - cudatoolkit=11.8
   - pytorch::faiss-gpu
   - pip
   - pip:
