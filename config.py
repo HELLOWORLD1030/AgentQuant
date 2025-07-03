@@ -18,8 +18,9 @@ class Config:
     QWEN_MODEL = "qwen3:4b"
 
     # 数据路径
-    PDF_DIR = os.path.join(str(PROJECT_ROOT),"data/pdfs")
-    JSON_DIR = os.path.join(str(PROJECT_ROOT),"data/jsons")
+    DATA_DIR = os.path.join(str(PROJECT_ROOT),"data")
+    PDF_DIR = os.path.join(DATA_DIR,"pdfs")
+    JSON_DIR = os.path.join(DATA_DIR,"jsons")
 
     # FAISS索引路径
     VECTOR_STORE_PATH = "vector_store.faiss"

@@ -3,6 +3,7 @@ import requests
 import time
 import random
 import sys
+from tqdm import tqdm
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from config import Config
 
@@ -105,7 +106,7 @@ class PDFCrawler:
         print(f"共获取到 {len(reports)} 份年报链接")
 
         downloaded = 0
-        for report in reports:
+        for report in tqdm(reports):
             if downloaded >= max_count:
                 break
 

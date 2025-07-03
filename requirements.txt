@@ -10,3 +10,4 @@ pymupdf
 dotenv
 langchain
 lxml
+tqdm

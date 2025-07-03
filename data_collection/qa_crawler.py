@@ -5,6 +5,7 @@ import time
 import random
 from bs4 import BeautifulSoup
 import sys
+from tqdm import tqdm
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from config import Config
 
@@ -91,7 +92,7 @@ class QACrawler:
         """运行爬虫"""
         all_qa = []
 
-        for page in range(1, max_pages + 1):
+        for page in tqdm(range(1, max_pages + 1), desc="Processing Question"):
             print(f"正在获取第 {page} 页问答数据...")
             raw_data = self.get_qa_data(page, per_page)
 

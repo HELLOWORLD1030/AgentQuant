@@ -22,6 +22,25 @@ class QuantAnalysisSystem:
         2. 数据加载器
         3. 核心处理代理
         """
+        #检查数据是否存在，不存在则调用下载逻辑
+        if not os.path.exists(Config.DATA_DIR):
+            print("未检测到数据文件，正在启动数据下载")
+            from data_collection import QACrawler, PDFCrawler
+            qa_crawler = QACrawler()
+            qa_crawler.run(max_pages=20)
+            pdf_crawler = PDFCrawler()
+            pdf_crawler.run(max_count=150)
+        elif not os.path.exists(Config.PDF_DIR):
+            print("未检测到PDF文件，正在启动数据下载")
+            from data_collection import QACrawler, PDFCrawler
+            pdf_crawler = PDFCrawler()
+            pdf_crawler.run(max_count=150)
+        elif not os.path.exists(Config.JSON_DIR):
+            print("未检测到JSON文件，正在启动数据下载")
+            from data_collection import QACrawler
+            qa_crawler = QACrawler()
+            qa_crawler.run(max_pages=20)
+
         # 初始化向量存储
         self.vector_store = VectorStore(embed_model=Config.EMB_MODEL)
 
@@ -56,8 +75,7 @@ class QuantAnalysisSystem:
         for doc in documents:
             content_list.append(doc["content"])
             metadata_list.append({
-                "source": doc["metadata"].get("source", "未标注来源"),
-                "date": doc["metadata"].get("date", "未知日期")
+                "source": doc["metadata"].get("source", "未标注来源")
             })
 
         # 添加文档到索引
