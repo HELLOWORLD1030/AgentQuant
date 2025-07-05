@@ -18,6 +18,7 @@
 #### ollama与qwen安装
 ```shell
 curl -fsSL https://ollama.com/install.sh | sh
+ollama run qwen3:4b
 ```
 #### 代码
 ```shell
@@ -25,5 +26,6 @@ git clone https://github.com/HELLOWORLD1030/AgentQuant
 cd AgentQuant
 conda env create -f environment.yml
 conda activate quantAgent
+# 确保Ollama在工作状态
 python main.py
 ```
