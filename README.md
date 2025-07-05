@@ -19,6 +19,7 @@
 ```shell
 curl -fsSL https://ollama.com/install.sh | sh
 ollama run qwen3:4b
+ollama pull nomic-embed-text
 ```
 #### 代码
 ```shell
